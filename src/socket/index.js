@@ -4,7 +4,7 @@ export const newConnectionHandler = newClient => {
   console.log("NEW CONNECTION:", newClient.id)
 
   // 1. Emit a "welcome" event to the connected client
-  newClient.emit("welcome", { message: `Hello ${newClient.id}` })
+  newClient.emit("welcome", { message: `${newClient.id} has joined the chat!` })
 
   // 2. Listen to an event emitted by the FE called "setUsername", this event is going to contain the username in the payload
   newClient.on("setUsername", payload => {
